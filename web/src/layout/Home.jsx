@@ -30,6 +30,7 @@ function Home() {
           w={'100%'}
           alignItems={['center', 'flex-end']}
           marginX={2}
+          marginTop={[20 , 0]}
           gap={2}
         >
           <Heading
@@ -42,11 +43,14 @@ function Home() {
           <Text
             textTransform={'capitalize'}
             children="find valuable content in reasonable price"
+            textAlign="center"
+            fontSize={'2xl'}
+            fontFamily='cursive'
           />
           <Link to={'/course'}>
             <Button
               textTransform={'capitalize'}
-              bg={'yellow.400'}
+              colorScheme='yellow'
               color="black"
             >
               explore now
@@ -59,15 +63,17 @@ function Home() {
           src={bg}
           boxSize="md"
           objectFit="contain"
+          zIndex={-10}
         />
       </Stack>
 
-      <Box bg={'blackAlpha.800'} padding={2}>
+      <Box bg={'blackAlpha.800'} paddingY={5}>
         <Heading
           textTransform={'uppercase'}
           textAlign="center"
           color={'yellow.400'}
           children="our brands"
+          marginBottom={10}
         />
         <HStack
           justifyContent={'space-around'}
@@ -90,7 +96,7 @@ function Home() {
         marginY={10}
       >
         <Box width={['100%', '60%']}>
-          <video  
+          <video
             controls
             src={intro}
             disablePictureInPicture
