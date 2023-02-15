@@ -1,5 +1,6 @@
 import React from 'react'
 import {BrowserRouter as Router , Routes , Route} from 'react-router-dom'
+import Courses from './layout/Courses'
 import Header from './layout/Header'
 import Home from './layout/Home'
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/courses' element={<Courses />} />
       </Routes>
     </Router>
   )

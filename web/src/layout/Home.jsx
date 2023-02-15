@@ -47,7 +47,7 @@ function Home() {
             fontSize={'2xl'}
             fontFamily='cursive'
           />
-          <Link to={'/course'}>
+          <Link to={'/courses'}>
             <Button
               textTransform={'capitalize'}
               colorScheme='yellow'
