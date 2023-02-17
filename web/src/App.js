@@ -7,6 +7,7 @@ import Header from './layout/Header'
 import Home from './layout/Home'
 import Login from './layout/Login'
 import Register from './layout/Register'
+import ResetPassword from './layout/ResetPassword'
 function App() {
   return (
     <Router>
@@ -17,6 +18,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/password/forget' element={<ForgetPassword />} />
+        <Route path='/password/reset/:token' element={<ResetPassword/>} />
       </Routes>
       <Footer />
     </Router>
