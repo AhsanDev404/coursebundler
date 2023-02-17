@@ -17,7 +17,7 @@ function Login() {
   const [password, setPassword] = useState('');
   return (
     <Container height={'95vh'}>
-      <VStack gap={5} height='full' alignItems={'center'} justifyContent='center'>
+      <VStack gap={5} height='full' py={'24'}>
         <Heading size={['lg' , 'xl']} children="Welcome to CourseBundler" />
         <FormControl >
           <FormLabel children="Email" htmlFor="email" />

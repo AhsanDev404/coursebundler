@@ -30,12 +30,11 @@ function Register() {
     };
   };
   return (
-    <Container height={'95vh'}>
+    <Container>
       <VStack
         gap={5}
         height="full"
-        alignItems={'center'}
-        justifyContent="center"
+        py={'24'}
       >
         <Heading size={['lg', 'xl']} children="Welcome to CourseBundler" />
         <Box>
