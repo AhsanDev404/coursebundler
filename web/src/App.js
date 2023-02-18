@@ -8,6 +8,8 @@ import Home from './layout/Home'
 import Login from './layout/Login'
 import Register from './layout/Register'
 import ResetPassword from './layout/ResetPassword'
+import Contact from './layout/Contact'
+import Request from './layout/Request'
 function App() {
   return (
     <Router>
@@ -17,6 +19,8 @@ function App() {
         <Route path='/courses' element={<Courses />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/request' element={<Request />} />
+        <Route path='/contact' element={<Contact />} />
         <Route path='/password/forget' element={<ForgetPassword />} />
         <Route path='/password/reset/:token' element={<ResetPassword/>} />
       </Routes>
