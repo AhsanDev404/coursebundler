@@ -12,6 +12,7 @@ import Contact from './layout/Contact'
 import Request from './layout/Request'
 import About from './layout/About'
 import Subscribe from './layout/Subscribe'
+import PaymentSuccess from './layout/PaymentSuccess'
 function App() {
   return (
     <Router>
@@ -28,6 +29,7 @@ function App() {
         <Route path='/password/forget' element={<ForgetPassword />} />
         <Route path='/password/reset/:token' element={<ResetPassword/>} />
         <Route path='/subscribe' element={<Subscribe/>} />
+        <Route path='/payment/success' element={<PaymentSuccess/>} />
 
       </Routes>
       <Footer />
