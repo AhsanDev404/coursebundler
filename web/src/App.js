@@ -10,6 +10,7 @@ import Register from './layout/Register'
 import ResetPassword from './layout/ResetPassword'
 import Contact from './layout/Contact'
 import Request from './layout/Request'
+import About from './layout/About'
 function App() {
   return (
     <Router>
@@ -20,6 +21,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/request' element={<Request />} />
+        <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/password/forget' element={<ForgetPassword />} />
         <Route path='/password/reset/:token' element={<ResetPassword/>} />
