@@ -11,6 +11,7 @@ import ResetPassword from './layout/ResetPassword'
 import Contact from './layout/Contact'
 import Request from './layout/Request'
 import About from './layout/About'
+import Subscribe from './layout/Subscribe'
 function App() {
   return (
     <Router>
@@ -23,8 +24,11 @@ function App() {
         <Route path='/request' element={<Request />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
+
         <Route path='/password/forget' element={<ForgetPassword />} />
         <Route path='/password/reset/:token' element={<ResetPassword/>} />
+        <Route path='/subscribe' element={<Subscribe/>} />
+
       </Routes>
       <Footer />
     </Router>
