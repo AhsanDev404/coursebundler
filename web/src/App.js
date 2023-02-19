@@ -13,6 +13,7 @@ import Request from './layout/Request'
 import About from './layout/About'
 import Subscribe from './layout/Subscribe'
 import PaymentSuccess from './layout/PaymentSuccess'
+import PageNotFound from './layout/PageNotFound'
 function App() {
   return (
     <Router>
@@ -30,6 +31,9 @@ function App() {
         <Route path='/password/reset/:token' element={<ResetPassword/>} />
         <Route path='/subscribe' element={<Subscribe/>} />
         <Route path='/payment/success' element={<PaymentSuccess/>} />
+
+
+        <Route path='*' element={<PageNotFound/>} />
 
       </Routes>
       <Footer />
