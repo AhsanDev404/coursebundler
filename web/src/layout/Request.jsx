@@ -6,7 +6,7 @@ function Request() {
     const [email , setEmail] = useState('')
     const [course , setCourse] = useState('')
   return (
-    <Container>
+    <Container h='95vh'>
         <VStack py={24} gap={5}>
             <Heading size={['lg' , 'xl']} children='Request A New Course' />
             <FormControl>

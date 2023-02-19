@@ -107,7 +107,7 @@ function Header() {
                     <Button colorScheme={'yellow'}>Login</Button>
                   </Link>
                   OR
-                  <Link onClick={onClose} to={'/signup'}>
+                  <Link onClick={onClose} to={'/register'}>
                     <Button colorScheme={'yellow'}>Signup</Button>
                   </Link>
                 </>

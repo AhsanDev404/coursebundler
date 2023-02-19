@@ -4,7 +4,7 @@ import {RiCheckboxCircleFill} from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 function PaymentSuccess() {
   return (
-    <Container py={24}>
+    <Container py={24} h={'95vh'}>
         <Heading textAlign={'center'} children='You have pro pack' pu={8}/>
         <Stack shadow={'xl'} my={10} borderRadius={'8px'}>
             <Box p={4} bg={'yellow.400'} css={{borderRadius:'8px 8px 0 0'}}>

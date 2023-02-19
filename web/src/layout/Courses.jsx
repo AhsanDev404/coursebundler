@@ -27,7 +27,7 @@ function Courses() {
     'NEXT.js',
   ];
   return (
-    <Container maxW={'container.lg'} paddingY={'8'}>
+    <Container maxW={'container.lg'} paddingY={'8'} minH={'95vh'}>
       <Heading children="All Courses" m={8} />
       <Input
         value={keyword}

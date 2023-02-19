@@ -6,7 +6,7 @@ function Contact() {
     const [email , setEmail] = useState('')
     const [message , setMessage] = useState('')
   return (
-    <Container>
+    <Container minH={'95vh'}>
         <VStack gap={5} py={24}>
             <Heading size={['lg' , 'xl']} children='Contact Us' />
             <FormControl>

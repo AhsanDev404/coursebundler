@@ -22,15 +22,21 @@ function Home() {
     <Box>
       <Stack
         height={window.innerHeight}
-        direction={['column', 'row']}
+       py={24}
         alignItems="center"
         margin={5}
       >
+         <Image
+          className="vector-graphics"
+          src={bg}
+          boxSize="md"
+          objectFit="contain"
+          zIndex={-10}
+        />
         <VStack
           w={'100%'}
-          alignItems={['center', 'flex-end']}
+          alignItems={'center'}
           marginX={2}
-          marginTop={[20 , 0]}
           gap={2}
         >
           <Heading
@@ -58,13 +64,7 @@ function Home() {
           </Link>
         </VStack>
 
-        <Image
-          className="vector-graphics"
-          src={bg}
-          boxSize="md"
-          objectFit="contain"
-          zIndex={-10}
-        />
+       
       </Stack>
 
       <Box bg={'blackAlpha.800'} paddingY={5}>

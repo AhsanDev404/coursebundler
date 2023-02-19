@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Button, Container, Heading, Stack, Text } from '@chakra-ui/react'
 function Subscribe() {
   return (
-    <Container py={24}>
+    <Container py={24} h={'95vh'}>
         <Heading textAlign={'center'} children='Welcome' />
         <Stack my={5} shadow={'lg'}>
             <Box bg={'yellow.400'} p={5} css={{borderRadius:'8px 8px 0 0'}}>

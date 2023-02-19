@@ -16,7 +16,7 @@ import terms from '../assets/docs/termsAndCondition';
 import { RiSecurePaymentFill } from 'react-icons/ri';
 function About() {
   return (
-    <Container maxW={'container.lg'} py={24} boxShadow={'lg'}>
+    <Container maxW={'container.lg'} py={24} boxShadow={'lg'} minH={'95vh'}>
       <Heading children="About Us" />
       <Stack my={5} direction={['column', 'row']} gap={5}>
         <VStack>

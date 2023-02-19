@@ -30,7 +30,7 @@ function Register() {
     };
   };
   return (
-    <Container>
+    <Container h={'95vh'}>
       <VStack
         gap={5}
         height="full"
