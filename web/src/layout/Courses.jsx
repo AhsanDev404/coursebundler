@@ -55,6 +55,7 @@ function Courses() {
         rowGap={5}
         columnGap={5}
         alignItems="center"
+        justifyContent={'center'}
       >
         <CourseCard
           src="https://images.pexels.com/photos/7364280/pexels-photo-7364280.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
