@@ -8,6 +8,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function CourseCard({
   src = 'https://images.pexels.com/photos/7364280/pexels-photo-7364280.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
@@ -17,7 +18,7 @@ function CourseCard({
   lecturesCount = '00',
 }) {
   return (
-    <Card cursor={'pointer'} padding={5} gap={2} maxW="72">
+    <Card cursor={'pointer'} padding={5} gap={2} w="72">
       <Image
         alignSelf={'center'}
         src={src}
@@ -33,9 +34,11 @@ function CourseCard({
       />
       <Text children={'Lectures: ' + lecturesCount} />
       <Stack flexDirection={['column', 'row']} alignItems="center">
+        <Link to='/course/sample'>
         <Button mt={2} colorScheme={'yellow'} variant="solid" w={'100%'}>
           Watch Now
         </Button>
+        </Link>
         <Button variant={'ghost'} colorScheme="yellow" w="100%">
           Add to Playlist
         </Button>

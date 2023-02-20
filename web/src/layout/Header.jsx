@@ -38,7 +38,7 @@ function Header() {
     role: 'user',
   };
   return (
-    <Box>
+    <Box >
       <IconButton
         onClick={onOpen}
         position={'fixed'}

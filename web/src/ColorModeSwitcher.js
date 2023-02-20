@@ -16,6 +16,7 @@ export const ColorModeSwitcher = props => {
       color="current"
      position={'fixed'}
      top={6}
+     zIndex={10}
      right={6}
      borderRadius={'100%'}
      border={0}
