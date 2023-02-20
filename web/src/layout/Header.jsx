@@ -33,7 +33,7 @@ function LinkButton({ to = '/', title ='Home' , onClick }) {
 
 function Header() {
   const { isOpen, onClose, onOpen } = useDisclosure();
-  const isAuthenticate = false;
+  const isAuthenticate = true;
   const user = {
     role: 'user',
   };

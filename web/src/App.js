@@ -16,6 +16,9 @@ import PaymentSuccess from './layout/PaymentSuccess';
 import PageNotFound from './layout/PageNotFound';
 import PaymentFail from './layout/PaymentFail';
 import CoursePage from './layout/CoursePage';
+import Profile from './layout/Profile';
+import ChangePassword from './layout/ChangePassword';
+
 function App() {
   return (
     <Router>
@@ -28,10 +31,12 @@ function App() {
         <Route path="/request" element={<Request />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/profile" element={<Profile />} />
+      
         <Route path="/course/:id" element={<CoursePage />} />
 
         <Route path="/password/forget" element={<ForgetPassword />} />
-        <Route path="/password/reset/:token" element={<ResetPassword />} />
+        <Route path="/password/change" element={<ChangePassword />} />
         <Route path="/subscribe" element={<Subscribe />} />
         <Route path="/payment/success" element={<PaymentSuccess />} />
         <Route path="/payment/fail" element={<PaymentFail />} />
