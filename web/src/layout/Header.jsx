@@ -35,7 +35,7 @@ function Header() {
   const { isOpen, onClose, onOpen } = useDisclosure();
   const isAuthenticate = true;
   const user = {
-    role: 'user',
+    role: 'admin',
   };
   return (
     <Box >
@@ -92,7 +92,7 @@ function Header() {
                       </Link>
                     </HStack>
                     {user && user.role === 'admin' && (
-                      <Link to={'/dashboard'} onClick={onClose}>
+                      <Link to={'admin/dashboard'} onClick={onClose}>
                       <Button colorScheme={'purple'} variant="outline">
                         <RiDashboardFill />
                         Dashboard

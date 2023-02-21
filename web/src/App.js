@@ -18,6 +18,10 @@ import PaymentFail from './layout/PaymentFail';
 import CoursePage from './layout/CoursePage';
 import Profile from './layout/Profile';
 import ChangePassword from './layout/ChangePassword';
+import AdminDashboard from './layout/AdminDashboard';
+import AdminCreateCourse from './layout/AdminCreateCourse';
+import AdminCourse from './layout/AdminCourse';
+import AdminUser from './layout/AdminUser';
 
 function App() {
   return (
@@ -40,6 +44,14 @@ function App() {
         <Route path="/subscribe" element={<Subscribe />} />
         <Route path="/payment/success" element={<PaymentSuccess />} />
         <Route path="/payment/fail" element={<PaymentFail />} />
+
+
+        {/** admin routes */}
+
+        <Route path='/admin/dashboard' element={<AdminDashboard />} />
+        <Route path='/admin/course/create' element={<AdminCreateCourse />} />
+        <Route path='/admin/course' element={<AdminCourse/>} />
+        <Route path='/admin/user' element={<AdminUser/>} />
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>
