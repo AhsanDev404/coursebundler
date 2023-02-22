@@ -1,6 +1,6 @@
 import { Button, Stack, Text } from '@chakra-ui/react'
 import React from 'react'
-import {RiDashboardFill} from 'react-icons/ri'
+import {RiDashboardFill,  RiAddCircleFill, RiEyeFill, RiUser2Fill} from 'react-icons/ri'
 import { Link, useLocation } from 'react-router-dom'
 import StickyBox from "react-sticky-box";
 function AdminButton({url , Icon , title , active}){
@@ -20,9 +20,9 @@ function AdminSideBar() {
     <StickyBox offsetTop={100}>
     <Stack p={10}   gap={5}  >
         <AdminButton url={'dashboard'} Icon={RiDashboardFill} title={'Dashboard'} active={location.pathname ==='/admin/dashboard'} />
-        <AdminButton url={'course/create'} Icon={RiDashboardFill} title={'Create'} active={location.pathname ==='/admin/course/create'}/>
-        <AdminButton url={'course'} Icon={RiDashboardFill} title={'Course'} active={location.pathname ==='/admin/course'}/>
-        <AdminButton url={'user'} Icon={RiDashboardFill} title={'User'} active={location.pathname ==='/admin/user'}/>
+        <AdminButton url={'course/create'} Icon={RiAddCircleFill} title={'Create Course'} active={location.pathname ==='/admin/course/create'}/>
+        <AdminButton url={'course'} Icon={RiEyeFill} title={'All Course'} active={location.pathname ==='/admin/course'}/>
+        <AdminButton url={'user'} Icon={RiUser2Fill} title={'All User'} active={location.pathname ==='/admin/user'}/>
     </Stack>
     </StickyBox>
   )
