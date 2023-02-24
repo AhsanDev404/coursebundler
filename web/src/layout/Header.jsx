@@ -47,6 +47,7 @@ function Header() {
         colorScheme={'yellow'}
         borderRadius={'100%'}
         icon={<RiMenu5Fill />}
+        zIndex={10}
       />
       <ColorModeSwitcher />
       <Drawer placement="left" isOpen={isOpen} onClose={onClose}>

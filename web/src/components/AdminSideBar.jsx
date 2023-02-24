@@ -18,7 +18,7 @@ function AdminSideBar() {
     const location = useLocation( )
   return (
     <StickyBox offsetTop={100}>
-    <Stack p={10}   gap={5}  >
+    <Stack p={10}   gap={5}  alignItems={'center'} >
         <AdminButton url={'dashboard'} Icon={RiDashboardFill} title={'Dashboard'} active={location.pathname ==='/admin/dashboard'} />
         <AdminButton url={'course/create'} Icon={RiAddCircleFill} title={'Create Course'} active={location.pathname ==='/admin/course/create'}/>
         <AdminButton url={'course'} Icon={RiEyeFill} title={'All Course'} active={location.pathname ==='/admin/course'}/>
