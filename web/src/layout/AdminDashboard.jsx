@@ -11,7 +11,9 @@ function AdminDashboard() {
       px={5}
       minH={'95vh'}
     >
-      <Box width={'full'}></Box>
+      <Box width={'full'}>
+        
+      </Box>
       <Box >
         <AdminSideBar />
       </Box>

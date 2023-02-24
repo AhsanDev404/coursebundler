@@ -34,12 +34,12 @@ function CourseCard({
       />
       <Text children={'Lectures: ' + lecturesCount} />
       <Stack flexDirection={['column', 'row']} alignItems="center">
-        <Link to='/course/sample'>
-        <Button mt={2} colorScheme={'yellow'} variant="solid" w={'100%'}>
+        <Link to='/course/sample' style={{width:'100%'}}>
+        <Button mt={2} colorScheme={'yellow'} variant="solid" w={'100%'} >
           Watch Now
         </Button>
         </Link>
-        <Button variant={'ghost'} colorScheme="yellow" w="100%">
+        <Button variant={'ghost'} colorScheme="yellow" w={'100%'}>
           Add to Playlist
         </Button>
       </Stack>
