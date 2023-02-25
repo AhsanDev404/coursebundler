@@ -11,6 +11,7 @@ import {
 import React from 'react';
 import AdminSideBar from '../components/AdminSideBar';
 import { RiArrowUpFill, RiArrowDownFill } from 'react-icons/ri';
+import { DoughnutChart, LineChart } from '../components/Chart';
 
 function DataBox({
   title = 'title',
@@ -46,7 +47,7 @@ function ProgressBar({ value = 80, title = 'title', profit = false }) {
         />
         <Progress
           value={profit ? value : 0}
-          colorScheme="green"
+          colorScheme="purple"
           size={'sm'}
           w={'full'}
         />
@@ -82,24 +83,33 @@ function AdminDashboard() {
           flexWrap={'wrap'}
           gap={5}
         >
-          <DataBox title="views" qty="123" percentage="30" profit/>
-          <DataBox title="user" qty="23" percentage="78"  profit/>
+          <DataBox title="views" qty="123" percentage="30" profit />
+          <DataBox title="user" qty="23" percentage="78" profit />
           <DataBox title="subscription" qty="12" percentage="20" />
         </Stack>
         <Card py={8} px={5}>
           <Heading children="View Graph" textAlign={'center'} />
+          <LineChart />
         </Card>
-        <Stack direction={['column', 'row']} gap={5}>
+        <Card direction={['column', 'row']} gap={5} my={5} py={5}>
           <Box flex={1}>
-            <Heading children='Progress Bar' size={'lg'} p={5} textAlign={'center'}/>
-            <ProgressBar value="30" title = 'views' profit />
-            <ProgressBar value="78" title = 'user' profit />
-            <ProgressBar value="20" title = 'subscription'  />
+            <Heading
+              children="Progress Bar"
+              size={'lg'}
+              p={5}
+              textAlign={'center'}
+            />
+            <ProgressBar value="30" title="views" profit />
+            <ProgressBar value="78" title="user" profit />
+            <ProgressBar value="20" title="subscription" />
           </Box>
-          <Box flex={1}>
-          <Heading children='Users' size={'lg'} p={5} textAlign={'center'}/>
-          </Box>
-        </Stack>
+          <Stack flex={1} alignItems={'center'}>
+            <Heading children="Users" size={'lg'} p={5} textAlign={'center'} />
+           <Box>
+           <DoughnutChart />
+           </Box>
+          </Stack>
+        </Card>
       </Box>
       <Box>
         <AdminSideBar />
