@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   HStack,
+  Heading,
   Stack,
   Table,
   TableCaption,
@@ -62,6 +63,7 @@ function AdminUser() {
         overflowX={'auto'}
         textAlign={['center', 'left']}
       >
+        <Heading children='All Users' py={5} textAlign={['center' ,'left' ]}/>
         <TableContainer w={['100vw', 'full']}>
           <Table variant={'simple'} size={'lg'}>
             <TableCaption>All User Available in database</TableCaption>
