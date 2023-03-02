@@ -9,3 +9,6 @@ export const getAllCourse = catchAsyncError(async(req,res,next)=>{
     })
 })
 
+export const createCourse = catchAsyncError(async(req,res,next)=>{
+    
+})
