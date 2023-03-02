@@ -8,3 +8,4 @@ export const getAllCourse = catchAsyncError(async(req,res,next)=>{
         course
     })
 })
+
