@@ -29,3 +29,9 @@ export const register = catchAsyncError(async(req,res,next)=>{
     }
     sendToken(res,user,"Register Successfully",201)
 })
+
+export const login  = catchAsyncError((req,res,next)=>{
+    const {email , password} = req.body
+
+
+})
