@@ -34,3 +34,5 @@ export const createCourse = catchAsyncError(async (req, res, next) => {
     message: "Course Created Successfully",
   });
 });
+
+
