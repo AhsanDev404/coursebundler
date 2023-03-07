@@ -169,14 +169,22 @@ export const resetPassword = catchAsyncError(async(req,res,next)=>{
 
 export const addToPlayList = catchAsyncError(async(req,res,next)=>{
     const user = await User.findById(req.user._id)
-    const course = await Course.findById(req.body.id)
+    const course = await Course.findById(req.query.id)
 
     if(!course) return next(new Errorhandler('Invalid Course Id' , 400))
 
-    user.playlist.push({
-        course:course._id,
-        poster:course.poster.url,
+    const newPlaylist = user.playlist.filter((item)=>{
+        if(item.course.toString()!==course._id.toString()){
+            return item
+        }
     })
+
+    
+
+    user.playlist = newPlaylist
+
+    await user.save()
+
     res.status(200).json({
         success:true,
         message:'Add to playlist successfully'
@@ -184,6 +192,21 @@ export const addToPlayList = catchAsyncError(async(req,res,next)=>{
 })
 
 export const deleteFromPlayList = catchAsyncError(async(req,res,next)=>{
+
+    const user = await User.findById(req.user._id)
+    const course = await Course.findById(req.query.id)
+
+    if(!course) return next(new Errorhandler('Invalid Course Id' , 400))
+
+    const item = user.playlist.find((item)=>{
+        if(item.course.toString()===course._id.toString()){
+            return true
+        }
+    })
+
+    
+
+    await user.save()
     res.status(200).json({
         success:true,
         message:'Delete from playlist successfully'
