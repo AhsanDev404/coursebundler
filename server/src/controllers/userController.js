@@ -4,6 +4,7 @@ import User from "../models/userModel.js";
 import Errorhandler from "../utils/errorHandler.js";
 import { sendToken } from "../utils/sendToken.js";
 import crypto from 'crypto'
+import Course from './../models/courseModel.js';
 
 export const register = catchAsyncError(async(req,res,next)=>{
     const {name , email , password} = req.body
@@ -163,5 +164,28 @@ export const resetPassword = catchAsyncError(async(req,res,next)=>{
      res.status(200).json({
         success:true,
         message:'password change successfully'
+     })
+})
+
+export const addToPlayList = catchAsyncError(async(req,res,next)=>{
+    const user = await User.findById(req.user._id)
+    const course = await Course.findById(req.body.id)
+
+    if(!course) return next(new Errorhandler('Invalid Course Id' , 400))
+
+    user.playlist.push({
+        course:course._id,
+        poster:course.poster.url,
+    })
+    res.status(200).json({
+        success:true,
+        message:'Add to playlist successfully'
+     })
+})
+
+export const deleteFromPlayList = catchAsyncError(async(req,res,next)=>{
+    res.status(200).json({
+        success:true,
+        message:'Delete from playlist successfully'
      })
 })
