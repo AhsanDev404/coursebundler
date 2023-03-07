@@ -1,7 +1,9 @@
 import { catchAsyncError } from "../middlewares/catchAsyncError.js";
+import sendEmail from "../middlewares/sendMail.js";
 import User from "../models/userModel.js";
 import Errorhandler from "../utils/errorHandler.js";
 import { sendToken } from "../utils/sendToken.js";
+import crypto from 'crypto'
 
 export const register = catchAsyncError(async(req,res,next)=>{
     const {name , email , password} = req.body
@@ -112,10 +114,54 @@ export const changeProfile = catchAsyncError(async(re,res,next)=>{
 })
 
 export const updatePicture = catchAsyncError(async(req,res,next)=>{
-    const user = User.findById(req.user._id)
+    const user = await User.findById(req.user._id)
 
     res.status(200).json({
         success:true,
         message:"profile picture updated successfully"
     })
+})
+
+export const forgetPassword = catchAsyncError(async(req,res,next)=>{
+    const {email} = req.body
+
+    const user = await User.findOne({email})
+
+    if(!user){
+        return(next(new Errorhandler('User not found' , 400)))
+    }
+
+    const restToken = await user.getResetToken()
+    const url = `${process.env.FRONTEND_URL}/password/reset${restToken}`
+    const message = `click on link to reset password ${url}`
+   await sendEmail(user.email , 'Reset Password',message)
+   res.status(200).json({
+    success:true,
+    message:"Mail Send Successfully"
+})
+
+})
+
+export const resetPassword = catchAsyncError(async(req,res,next)=>{
+     const {token} = req.params
+     const resetPasswordToken = crypto.createHash('sha256').update(token).digest('hex')
+     const user = await User.findOne({
+        resetPasswordToken,
+        resetPasswordExpire:{
+            $gt:Date.now()
+        }
+     })
+     if(!user){
+        return(next(new Errorhandler('Token Expired')))
+     }
+     user.password = password,
+     user.resetPasswordToken = undefined
+     user.resetPasswordExpire = undefined
+
+     await user.save()
+
+     res.status(200).json({
+        success:true,
+        message:'password change successfully'
+     })
 })

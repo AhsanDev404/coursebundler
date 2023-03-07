@@ -1,5 +1,5 @@
 import express from 'express'
-import { changePassword, changeProfile, getMyProfile, login, logout, register } from '../controllers/userController.js'
+import { changePassword, changeProfile, forgetPassword, getMyProfile, login, logout, register, resetPassword } from '../controllers/userController.js'
 import { isAuthenticate } from '../middlewares/auth.js'
 
 
@@ -16,5 +16,9 @@ userRoute.route('/me').get(isAuthenticate,getMyProfile)
 userRoute.route('/password/change').put(isAuthenticate , changePassword)
 
 userRoute.route('/me/update').put(isAuthenticate , changeProfile)
+
+userRoute.route('/password/forget').post(forgetPassword)
+
+userRoute.route('/password/reset/:token').put(resetPassword)
 
 export default userRoute 
